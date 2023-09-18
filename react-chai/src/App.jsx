@@ -24,7 +24,6 @@ function App() {
     setIsModalOpen(false);
   };
   const DeleteUser = (name) => {
-    console.log("name", name);
     const updateData = Users.filter((element, index) => {
       return element.name !== name;
     });
@@ -35,13 +34,20 @@ function App() {
     setIsviewOpen(true);
   };
   const editUser  = (item) => {
+    
     setEditData(item)
     isEditopen(true)
   };
   const viewClose = () => {
     setIsviewOpen(false);
   };
-  const EditClose = ()=>{
+  const EditClose = (item)=>{
+    const indexToRemove = Users.findIndex(obj => obj.name === EditData);
+          if (indexToRemove !== -1) {
+            var updatedArr = Users.splice(indexToRemove, 0, item);
+            updatedArr.splice(indexToRemove+1, 1);
+             }
+    setUsers(Users)
     isEditopen(false)
   }
   return (
@@ -74,12 +80,12 @@ function App() {
         viewClose={viewClose}
         entityData={entityData}
       />
-      <Card
+      {/* <Card
         showUser={showUser}
         item={Users}
         setIsviewOpen={setIsviewOpen}
         DeleteUser={DeleteUser}
-      />
+      /> */}
       <Edit
         isEdit={isEdit}
         EditData={EditData}

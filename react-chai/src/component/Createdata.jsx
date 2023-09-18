@@ -18,7 +18,7 @@ const Createdata = ({isModalOpen,handleClose,entityData,setUsers,Users}) => {
       age,
       hobbies,
       food,
-    //   date,
+      date,
       gender
 
     }
@@ -28,13 +28,9 @@ const Createdata = ({isModalOpen,handleClose,entityData,setUsers,Users}) => {
     setHobbies('')
     setGender('')
     setFood('')
-    // setIsModalOpen(false);
     handleClose();
     window.location.reload()
   }
-
-  // const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
-  // const [users, setUsers]=useState(getDatafromLS());  
   const [name, setName]=useState('');
   const [gender, setGender]=useState('');
   const [food, setFood]=useState('');
@@ -63,8 +59,8 @@ const Createdata = ({isModalOpen,handleClose,entityData,setUsers,Users}) => {
             <input type="number" className='form-control' required
             onChange={(e)=>setAge(e.target.value)} value={age}></input>
             <br></br>
-            {/* <label>DOB</label>
-            <DatePicker  selected={date} onChange={(date) => setDate(date)} /> */}
+            <label>DOB</label>
+            <DatePicker  selected={date} onChange={(date) => setDate(date)} />
             <br></br>
             <label>Gender</label>
             <input type="text" className='form-control' required

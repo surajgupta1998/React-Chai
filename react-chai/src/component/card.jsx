@@ -11,7 +11,7 @@ export const Card = (props) => {
 
 
     return (<>
-
+        
         <div key={index} style={{
             border: "1px solid black", borderRadius: "5px", float: "left",
             width: "25%",
@@ -39,7 +39,7 @@ export const Card = (props) => {
             <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "8px" }}>
                 <button onClick={() => DeleteUser(item.name)}>Delete</button>
                 <button onClick={() => showUser(item)}>view</button>
-                <button onClick={() => editUser(item)}>Edit</button>
+                <button onClick={() => editUser(item.name)}>Edit</button>
             </div>
         </div>
         </>

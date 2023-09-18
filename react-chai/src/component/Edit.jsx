@@ -1,9 +1,10 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
 
 
 
 const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
+   
     const handleEditUserSubmit=(e)=>{
         e.preventDefault();
         let user={
@@ -11,24 +12,18 @@ const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
           age,
           hobbies,
           food,
-        //   date,
+          date,
           gender
-    
         }
-        const updateData = Users.filter((element, index) => {
-            return element.name !== e.name;
-          });
-    
-        setUsers([updateData,user]);
         setAge('')
         setName('')
         setHobbies('')
         setGender('')
         setFood('')
-        // setIsModalOpen(false);
-        EditClose();
+        EditClose(user);
         window.location.reload()
       }
+  
     const [name, setName]=useState('');
     const [gender, setGender]=useState('');
     const [food, setFood]=useState('');
@@ -51,8 +46,8 @@ const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
             <input type="number" className='form-control' required
             onChange={(e)=>setAge(e.target.value)} placeholder={EditData.age}  value={age}></input>
             <br></br>
-            {/* <label>DOB</label>
-            <DatePicker  selected={date} onChange={(date) => setDate(date)} /> */}
+            <label>DOB</label>
+            <DatePicker  selected={date} onChange={(date) => setDate(date)} />
             <br></br>
             <label>Gender</label>
             <input type="text" className='form-control' required
