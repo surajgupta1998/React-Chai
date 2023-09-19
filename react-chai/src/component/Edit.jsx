@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 
 
 
-const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
+const Edit=({isEdit,EditData,EditClose,setUsers,Users,EditModalHide})=>{
    
     const handleEditUserSubmit=(e)=>{
         e.preventDefault();
