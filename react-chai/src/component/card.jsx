@@ -12,7 +12,7 @@ export const Card = (props) => {
 
     return (<>
         
-        <div key={index} style={{
+        <div className='card' key={index} style={{
             border: "1px solid black", borderRadius: "5px", float: "left",
             width: "25%",
             display: "block",
