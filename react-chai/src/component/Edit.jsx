@@ -12,7 +12,7 @@ const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
           age,
           hobbies,
           food,
-          date,
+        //   date,
           gender
         }
         setAge('')
@@ -46,9 +46,9 @@ const Edit=({isEdit,EditData,EditClose,setUsers,Users})=>{
             <input type="number" className='form-control' required
             onChange={(e)=>setAge(e.target.value)} placeholder={EditData.age}  value={age}></input>
             <br></br>
-            <label>DOB</label>
+            {/* <label>DOB</label>
             <DatePicker  selected={date} onChange={(date) => setDate(date)} />
-            <br></br>
+            <br></br> */}
             <label>Gender</label>
             <input type="text" className='form-control' required
             onChange={(e)=>setGender(e.target.value)} placeholder={EditData.gender} value={gender}></input>

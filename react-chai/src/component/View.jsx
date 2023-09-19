@@ -17,8 +17,8 @@
             <input type="number" className='form-control' required
              value={entityData.age}></input>
             <br></br>
-            <label>DOB</label>
-            <DatePicker  selected={date} onChange={(date) => setDate(date)} />
+            {/* <label>DOB</label>
+            <DatePicker  selected={date} onChange={(date) => setDate(date)} /> */}
             <br></br>
             <label>Gender</label>
             <input type="text" className='form-control' required

@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
 import "../component/Styles.Css"; // Import your custom CSS for styling the modal
+// import DatePicker from 'react-datepicker'
+
 
 const getDatafromLS=()=>{
   const data = localStorage.getItem('users');
@@ -18,7 +20,7 @@ const Createdata = ({isModalOpen,handleClose,entityData,setUsers,Users}) => {
       age,
       hobbies,
       food,
-      date,
+      // date,
       gender
 
     }
@@ -59,9 +61,9 @@ const Createdata = ({isModalOpen,handleClose,entityData,setUsers,Users}) => {
             <input type="number" className='form-control' required
             onChange={(e)=>setAge(e.target.value)} value={age}></input>
             <br></br>
-            <label>DOB</label>
+            {/* <label>DOB</label>
             <DatePicker  selected={date} onChange={(date) => setDate(date)} />
-            <br></br>
+            <br></br> */}
             <label>Gender</label>
             <input type="text" className='form-control' required
             onChange={(e)=>setGender(e.target.value)} value={gender}></input>
