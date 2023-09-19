@@ -30,7 +30,6 @@ export const Card = (props) => {
             <hr />
             <div style={{ textAlign: "left", marginLeft: "10px" }}>
                 <p>Age: {item.age}</p>
-                <p>Dob: {item.date}</p>
                 <p>Gender {item.gender}</p>
                 <p>Food: {item.food}</p>
                 <p>Hoobies {item.hobbies}</p>
@@ -39,7 +38,7 @@ export const Card = (props) => {
             <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "8px" }}>
                 <button onClick={() => DeleteUser(item.name)}>Delete</button>
                 <button onClick={() => showUser(item)}>view</button>
-                <button onClick={() => editUser(item.name)}>Edit</button>
+                <button onClick={() => editUser(item)}>Edit</button>
             </div>
         </div>
         </>

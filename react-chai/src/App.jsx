@@ -42,12 +42,24 @@ function App() {
     setIsviewOpen(false);
   };
   const EditClose = (item)=>{
-    const indexToRemove = Users.findIndex(obj => obj.name === EditData);
-          if (indexToRemove !== -1) {
-            var updatedArr = Users.splice(indexToRemove, 0, item);
-            updatedArr.splice(indexToRemove+1, 1);
+    const indexToRemove = Users.findIndex(obj => obj.name === EditData.name && obj.age === EditData.age);
+    function removeAtIndex(arr, indexToRemove) {
+      if (indexToRemove < 0 || indexToRemove >= arr.length) {
+        // Index is out of bounds, return the original array.
+        return arr;
+      }
+    
+      return arr.filter((_, index) => index !== indexToRemove);
+    }  
+    var updatedArr
+    if (indexToRemove !== -1) {
+            updatedArr = Users.splice(indexToRemove, 0, item)
+            // updatedArr.splice(indexToRemove+1, 1);
+            // console.log(updatedArr);
              }
-    setUsers(Users)
+             const newArray = removeAtIndex(Users, indexToRemove+1);
+
+    setUsers(newArray)
     isEditopen(false)
   }
   return (
